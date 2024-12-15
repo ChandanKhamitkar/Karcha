@@ -1,0 +1,13 @@
+<div
+    (click)="chooseItem()"
+    class="rounded-md  border border-gray-700 p-4 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-100 relative">
+    <mat-icon [style]="{color : item.color}">{{item.iconName}}</mat-icon>
+    <p class="text-xs">{{item.label}}</p>
+
+    @if (isChoosen()) {
+        <p class="absolute top-2 right-2 bg-green-500 rounded-full p-1 flex justify-center items-center">
+            <mat-icon style="color: white; ">check</mat-icon>
+        </p>
+    }
+
+</div>

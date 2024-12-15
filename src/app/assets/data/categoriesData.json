@@ -1,0 +1,77 @@
+[
+  {
+    "iconName": "receipt_long",
+    "label": "Bills",
+    "color": "#1E88E5"
+  },
+  {
+    "iconName": "restaurant",
+    "label": "Food",
+    "color": "#F4511E"
+  },
+  {
+    "iconName": "flight",
+    "label": "Travel",
+    "color": "#00796B"
+  },
+  {
+    "iconName": "movie",
+    "label": "Entertainment",
+    "color": "#AB47BC"
+  },
+  {
+    "iconName": "shopping_bag",
+    "label": "Shopping",
+    "color": "#FB8C00"
+  },
+  {
+    "iconName": "soap",
+    "label": "Toiletries",
+    "color": "#546E7A"
+  },
+  {
+    "iconName": "directions_car",
+    "label": "Transportation",
+    "color": "#3949AB"
+  },
+  {
+    "iconName": "local_hospital",
+    "label": "Healthcare",
+    "color": "#00ACC1"
+  },
+  {
+    "iconName": "school",
+    "label": "Education",
+    "color": "#FDD835"
+  },
+  {
+    "iconName": "home",
+    "label": "Housing",
+    "color": "#5E35B1"
+  },
+  {
+    "iconName": "savings",
+    "label": "Savings",
+    "color": "#FFC107"
+  },
+  {
+    "iconName": "security",
+    "label": "Insurance",
+    "color": "#1565C0"
+  },
+  {
+    "iconName": "redeem",
+    "label": "Gifts",
+    "color": "#FF7043"
+  },
+  {
+    "iconName": "pets",
+    "label": "Pets",
+    "color": "#6D4C41"
+  },
+  {
+    "iconName": "fitness_center",
+    "label": "Fitness",
+    "color": "#C62828"
+  }
+]

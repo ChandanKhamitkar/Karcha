@@ -1,0 +1,13 @@
+<div class="py-5">
+  <form class="example-form">
+    <mat-form-field class="example-full-width ">
+      <mat-label>Enter your Expense</mat-label>
+      <input matInput type="number" [value]="enteredExpense()" (keyup)="onExpenseInput($event)" class="bg-neutral-400">
+    </mat-form-field>
+    <mat-form-field class="example-full-width ">
+      <mat-label>Note</mat-label>
+      <input matInput type="text" [value]="inputNote()" (keyup)="onInputNote($event)" class="bg-neutral-400">
+    </mat-form-field>
+  </form>
+  <app-categories />
+</div>
