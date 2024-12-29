@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {categoryType} from "../../model/category.type";
 @Component({
@@ -13,11 +13,9 @@ import {categoryType} from "../../model/category.type";
 export class CategoryItemComponent {
   @Input() item! : categoryType;
   isChoosen = signal<boolean>(false);
+  @Output() chooseItem = new EventEmitter<string>();
 
-  chooseItem(){
-    // this.isChoosen.update((val) => {
-    //   return !val;
-    // })
-    
+  selectItem(){
+    this.chooseItem.emit(this.item.label);
   }
 }

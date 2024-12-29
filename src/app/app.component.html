@@ -169,17 +169,24 @@
 <main class="main">
   <div class="content">
     <div class="left-side">
-      <p
-        class="text-3xl font-bold font-mono bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
-        Karcha</p>
-      <h1>{{ title }}</h1>
-      <p>Track you expenses here now on!</p>
+      <nav *ngIf="(authService.user$ | async) as userData" class="flex justify-around mx-4 gap-6"> <!-- Use async pipe -->
+          <span>Welcome, <b>{{ userData.displayName }}</b></span>
+          <img [src]="userData.photoURL" alt="User Photo" class="rounded-full size-8" />
+          <button (click)="logout()" class="bg-red-500 rounded-md text-xs px-5 py-1">Logout</button>
+      </nav>
+      <button *ngIf="!(authService.user$ | async)" (click)="login()"
+        class="px-5 py-2 bg-gray-200 rounded-3xl shadow-md float-right">Sign in with Google</button>
+        <p
+          class="text-3xl font-bold font-mono bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+          Karcha</p>
+        <h1>{{ title }}</h1>
+        <p>Track you expenses here now on!</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <app-expense-list/>
-    <app-expense-list/>
-    <app-expense-list/>
-    <app-expense-list/>
+    <app-expense-list />
+    <app-expense-list />
+    <app-expense-list />
+    <app-expense-list />
 
     <button mat-flat-button (click)="openBottomSheet()" class="mt-4">Add Expense</button>
 

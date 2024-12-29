@@ -9,5 +9,5 @@
       <input matInput type="text" [value]="inputNote()" (keyup)="onInputNote($event)" class="bg-neutral-400">
     </mat-form-field>
   </form>
-  <app-categories />
+  <app-categories (categorySelected)="onCategorySelected($event)"  />
 </div>

@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 gap-4 py-4">
     @for (item of dataList; track $index) {
-        <app-category-item [item]="item"/>
+        <app-category-item [item]="item" (chooseItem)="chooseItem($event)"/>
     }
 </div>
