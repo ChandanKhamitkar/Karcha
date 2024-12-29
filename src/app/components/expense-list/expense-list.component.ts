@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-expense-list',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './expense-list.component.css'
 })
 export class ExpenseListComponent {
-  
+  @Input() item!: {category: string, date: string, expense: string, note: string}
 }

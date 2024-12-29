@@ -183,10 +183,10 @@
         <p>Track you expenses here now on!</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <app-expense-list />
-    <app-expense-list />
-    <app-expense-list />
-    <app-expense-list />
+    @for(item of expenseList(); track $index){
+      <app-expense-list  [item]="item"/>
+      <div class="divider" role="separator" aria-label="Divider"></div>
+    }
 
     <button mat-flat-button (click)="openBottomSheet()" class="mt-4">Add Expense</button>
 
