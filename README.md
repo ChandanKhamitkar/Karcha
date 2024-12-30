@@ -2,6 +2,61 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
 
+
+# Learnings
+
+### Intall Angular CLI
+```
+npm install -g @angular/cli
+```
+
+### Create new project
+```
+npm install -g @angular/cli
+```
+
+### To create component run:
+```
+ng g components components/card
+
+// This will generate files that are requried
+    - Such as 
+        - card.component.css
+        - card.component.html 
+        - card.component.ts ( Writing entire logic ( script ) such importing javascript will be written here )
+        - card.component.spec.ts
+```
+
+- app.component.html routes for **'/'** path
+## Angular inbuilt methods | Functions | Packages used :
+
+#### 🔸Signal
+Used for managing reactivity and optimizing change detection.
+```
+Syntax:
+variableName = signal<type>(default-value);
+
+Example:
+title = signal<string>('Karcha');
+```
+
+#### Oninit
+ngOnInit is called only once during the **component's lifecycle**, making it ideal for tasks that need to be performed only once.
+
+```
+Syntax:
+async ngOninit(){
+    // perform your task here
+}
+
+ngOninit(): void{
+    // perform your task here
+}
+```
+
+
+
+
 ## Development server
 
 To start a local development server, run:
