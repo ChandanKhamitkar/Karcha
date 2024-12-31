@@ -16,11 +16,6 @@ import { AuthService } from './services/auth.service';
 import {
   Firestore,
   getDoc,
-  query,
-  where,
-  collection,
-  limit,
-  getDocs,
   doc,
 } from '@angular/fire/firestore';
 @Component({
@@ -43,9 +38,7 @@ import {
 })
 export class AppComponent {
   title = 'Expense-tracker';
-  actualDocID = signal<string>('');
-  // expenseList = signal<{category: string, date: string, expense: string, note: string}[]>([]);
-  expenseList = signal<any>([]);
+  expenseList = signal<{category: string, date: string, expense: string, note: string}[]>([]);
   private _bottomSheet = inject(MatBottomSheet);
   private firestore: Firestore = inject(Firestore);
   user$!: AuthService;
@@ -54,21 +47,12 @@ export class AppComponent {
     try {
       this.authService.user$.subscribe(async (user) => {
         if (user) {
-          const q = query(
-            collection(this.firestore, 'users'),
-            where('email', '==', user?.email),
-            limit(1)
-          );
-          const snapshot = await getDocs(q);
-          snapshot.forEach((doc) => {
-            this.actualDocID.set(doc.id);
-          });
-          const docRef = doc(this.firestore, 'users', this.actualDocID());
+          const docRef = doc(this.firestore, 'users', user.uid);
           const docSnap = await getDoc(docRef);
           const data = docSnap.data();
           if(data){
-            this.expenseList.set(data['allExpenses']);
-            console.log('Doc retrivied : ', data['allExpenses']);
+            this.expenseList.set(data['allExpensesList']);
+            console.log('Doc retrivied : ', data['allExpensesList']);
           }
         }
       });
